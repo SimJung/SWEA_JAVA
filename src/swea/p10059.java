@@ -16,9 +16,9 @@ public class p10059 {
 			
 			if(f < 13 && e < 13 && f > 0 && e > 0)
 				ans = "AMBIGUOUS";
-			else if(f < 13 )
+			else if(f < 13 && f > 0)
 				ans = "MMYY";
-			else if(e < 13)
+			else if(e < 13 && e > 0)
 				ans = "YYMM";
 			
 			System.out.println("#" + tc + " " + ans);
