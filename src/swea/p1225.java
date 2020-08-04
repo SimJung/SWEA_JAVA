@@ -18,7 +18,6 @@ public class p1225 {
 			}
 			while(true) {
 				int front = q.poll();
-				//System.out.println(front);
 				if(front > val) {
 					front -= val;
 					if(++val > 5)
