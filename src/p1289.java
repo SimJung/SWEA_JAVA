@@ -1,8 +1,8 @@
-package swea;
+
 
 import java.util.Scanner;
 
-public class p10505 {
+public class p1289 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -10,19 +10,21 @@ public class p10505 {
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
 		for(int tc=1; tc<=T; tc++) {
-			int N, sum = 0, ans = 0;
-			N = sc.nextInt();
-			int arr[] = new int[N];
-			for(int i=0; i<N; i++) {
-				arr[i] = sc.nextInt();
-				sum += arr[i];
-			}
 			
-			for(int i=0; i<N; i++) {
-				if(arr[i] <= (double)sum / N) {
+			int ans = 0;
+			boolean now_bit = false;
+			String str;
+			str = sc.next();
+			
+			
+			for(int i=0; i<str.length(); i++) {
+				boolean chk = (str.charAt(i) == '0' ? false : true);
+				if(now_bit != chk) {
 					ans++;
+					now_bit = !now_bit;
 				}
 			}
+			
 			System.out.println("#" + tc + " " + ans);
 		}
 	}
