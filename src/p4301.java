@@ -1,4 +1,4 @@
-package swea;
+
 import java.util.Scanner;
 public class p4301 {
 	static boolean visit[][];
