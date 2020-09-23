@@ -1,11 +1,103 @@
-import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.PriorityQueue;
-import java.util.StringTokenizer;
+import java.util.Collections;
+import java.util.Scanner;
+
 
 public class p1251 {
+	
+	    public static class Island implements Comparable<Island> {
+	        int x, y;
+	        double w;
+	        
+	        private Island(int x, int y, double w) {
+	            this.x = x;
+	            this.y = y;
+	            this.w = w;
+	        }
+	        @Override
+	        public int compareTo(Island o) {
+	           if(w > o.w) return 1;
+	           else if(w == o.w) return 0;
+	           else return -1;
+	        }
+	    }
+	    
+	    static int N;
+	    static long answer;
+	    static int[] parents;
+	    public static void main(String[] args) throws IOException {
+	        
+	        //System.setIn(new FileInputStream("input.txt"));
+	        Scanner sc = new Scanner(System.in);
+	        int T = sc.nextInt();
+	        for(int TC=1; TC<=T; TC++) {
+	            
+	            // input
+	            N = sc.nextInt();
+	            int[][] island = new int[N][2];
+	            for(int i=0; i<N; i++) {    // x좌표
+	                island[i][0] = sc.nextInt();
+	            }
+	            for(int i=0; i<N; i++) {    // y좌표
+	                island[i][1] = sc.nextInt();
+	            }
+	            double E= sc.nextDouble();    // 환경부담금
+	            
+	            // 연결가능한 선 리스트 구하기
+	            ArrayList<Island> list = new ArrayList<Island>();
+	            for(int i=0; i<N; i++) {
+	                for(int j=0; j<N; j++) {
+	                    if(i == j)    continue;
+	                    
+	                    double L = (Math.pow(island[j][0]-island[i][0], 2) + Math.pow(island[j][1]-island[i][1], 2));
+	                    list.add(new Island(i, j, L));
+	                }
+	            }
+	            
+	            // 오름차순 정렬
+	            Collections.sort(list);
+	            
+	            parents = new int[N];
+	            makeSet();
+	            
+	            answer = 0;
+	            int cnt = 0;
+	            for(Island is :    list) {
+	                if(union(is.x, is.y)) {
+	                    answer += is.w;
+	                    cnt++;
+	                    if(cnt == N-1) break;
+	                }
+	            }
+	            
+	            System.out.println("#"+TC+" "+ (long)Math.round(answer*E));
+	        }
+	        sc.close();
+	    }
+	    private static boolean union(int x, int y) {
+	        
+	        int px = findSet(x);
+	        int py = findSet(y);
+	        
+	        if(px == py) return false;
+	        parents[py] = px;
+	        return true;
+	    }
+	    
+	    private static int findSet(int x) {
+	        if(parents[x] == x)    return x;
+	        return parents[x] = findSet(parents[x]);
+	    }
+	    
+	    private static void makeSet() {
+	        for(int i=0; i<N; i++) {
+	            parents[i] = i;
+	        }
+	    }
+	
+	/*
 	static class Edge implements Comparable<Edge>{
 		public int to;
 		public double dist;
