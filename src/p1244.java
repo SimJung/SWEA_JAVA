@@ -36,7 +36,6 @@ public class p1244 {
 					//남은 횟수 짝수, 홀수, 숫자 같을 때
 				}else {
 					char temp = numstr.charAt(idx);
-					numstr.charAt(idx) = biggest;
 					
 				}
 				

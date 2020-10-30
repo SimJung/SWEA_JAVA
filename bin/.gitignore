@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /base.class
 /p10059.class
 /p10200.class
@@ -11,18 +12,37 @@
 /p1233.class
 /p1238.class
 /p1244.class
+=======
+/p1251$Island.class
+/p1251.class
+>>>>>>> 1c47a68d29c8420ef858353e8881bbb422fe0eca
 /p1289.class
+/p1767.class
 /p1861.class
 /p1873.class
 /p1954.class
 /p1986.class
 /p2001.class
+<<<<<<< HEAD
+=======
+/p2382$Cluster.class
+/p2382.class
+>>>>>>> 1c47a68d29c8420ef858353e8881bbb422fe0eca
 /p3124$Edge.class
 /p3124$EdgeCompare.class
 /p3124.class
+/p3234.class
 /p3289.class
+/p3307.class
 /p3499.class
+/p4012.class
+/p4301.class
+/p4613.class
+/p4796.class
+/p5607.class
+/p7393.class
 /p9229.class
+<<<<<<< HEAD
 /swea/
 /p4301.class
 /p4014.class
@@ -30,3 +50,12 @@
 /p1824$Info.class
 /p1952.class
 /SW_1824_혁진이의프로그램검증.class
+=======
+/p10888.class
+/p10888$Spot.class
+/p4014.class
+/p1249.class
+/p1249$Info.class
+>>>>>>> 1c47a68d29c8420ef858353e8881bbb422fe0eca
+/p1247$Spot.class
+/p1247.class
