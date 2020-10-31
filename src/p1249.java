@@ -49,6 +49,7 @@ public class p1249 {
 			while(!q.isEmpty()) {
 				Info now = q.poll();
 				
+				
 				for(int d=0; d<4; d++) {
 					int ni = now.i + delta[d][0];
 					int nj = now.j + delta[d][1];
